@@ -9,28 +9,26 @@ load_dotenv()
 with open('data/user_id.json') as f:
     user_data = json.load(f)
 
-user_id = user_data['user_id']
-print("user_data: ", user_data)
-print("user_id: ", user_id)
+# user_id = user_data['user_id']
+# print("user_data: ", user_data)
+# print("user_id: ", user_id)
 
 with open('data/user_following.json') as f:
     user_following_data = json.load(f)
 
-following = user_following_data['body']['users']
+# following = user_following_data['body']['users']
 
 API_KEY = os.environ['API_KEY']
 USER_ID = os.environ['USER_ID']
-print("API_KEY", API_KEY)
 
 headers = {
     'x-rapidapi-key': API_KEY,
     'x-rapidapi-host': "instagram47.p.rapidapi.com"
 }
-print(headers)
 
-print("user_following_data: ", user_following_data)
-print("following: ", following)
-print("following LENGTH: ", len(following))
+# print("user_following_data: ", user_following_data)
+# print("following: ", following)
+# print("following LENGTH: ", len(following))
 
 
 def get_user_id(username):
@@ -62,4 +60,9 @@ def get_user_followers(user_id):
     return response
 
 
-get_user_followers()
+def parse_followers(follower_list):
+    username = follower_list['body']['edges'][0]['node']['username']
+    full_name = follower_list['body']['edges'][0]['node']['full_name']
+    print(username)
+    print(full_name)
+    return [{username, full_name}]
