@@ -61,8 +61,12 @@ def get_user_followers(user_id):
 
 
 def parse_followers(follower_list):
-    username = follower_list['body']['edges'][0]['node']['username']
-    full_name = follower_list['body']['edges'][0]['node']['full_name']
-    print(username)
-    print(full_name)
-    return [{username, full_name}]
+    """Return list of names & usernames."""
+    array = []
+    for user in follower_list['body']['edges']:
+        username = user['node']['username']
+        full_name = user['node']['full_name']
+        array.append({username, full_name})
+        print(username, full_name)
+    print(array)
+    return array

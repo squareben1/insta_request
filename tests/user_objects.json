@@ -1,0 +1,56 @@
+{
+    "body": {
+        "edges": [
+            {
+                "node": {
+                    "is_private": false,
+                    "requested_by_viewer": false,
+                    "full_name": "Test Tester",
+                    "profile_pic_url": "https:\/\/scontent-frx5-2.cdninstagram.com\/test",
+                    "username": "test_username",
+                    "followed_by_viewer": false,
+                    "reel": {
+                        "has_pride_media": false,
+                        "id": "34447286722",
+                        "latest_reel_media": 1624124620,
+                        "owner": {
+                            "username": "test_username",
+                            "__typename": "GraphUser",
+                            "profile_pic_url": "https:\/\/scontent-frx5-2.cdninstagram.com\test",
+                            "id": "34447286722"
+                        },
+                        "seen": null,
+                        "expiring_at": 1624124620
+                    },
+                    "id": "34447286722",
+                    "is_verified": false
+                }
+            },
+            {
+                "node": {
+                    "is_private": false,
+                    "requested_by_viewer": false,
+                    "full_name": "Test Testerson",
+                    "profile_pic_url": "https:\/\/scontent-frx5-2.cdninstagram.com\/test",
+                    "username": "test_username2",
+                    "followed_by_viewer": false,
+                    "reel": {
+                        "has_pride_media": false,
+                        "id": "34447286722",
+                        "latest_reel_media": 1624124620,
+                        "owner": {
+                            "username": "test_username2",
+                            "__typename": "GraphUser",
+                            "profile_pic_url": "https:\/\/scontent-frx5-2.cdninstagram.com\test",
+                            "id": "34447286722"
+                        },
+                        "seen": null,
+                        "expiring_at": 1624124620
+                    },
+                    "id": "34447286722",
+                    "is_verified": false
+                }
+            }
+        ]
+    }
+}
