@@ -1,0 +1,12 @@
+/.coverage
+/.reports
+/.nox/
+/.python-version
+/src/*.egg-info/
+__pycache__/
+/.env
+
+# exclude everything in /data
+data/*
+# keep folder itself 
+!data/.gitkeep
