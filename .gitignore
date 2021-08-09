@@ -1,5 +1,7 @@
 /.coverage
 /.reports
+./reports
+reports
 /.nox/
 /.python-version
 /src/*.egg-info/

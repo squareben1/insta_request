@@ -21,7 +21,7 @@ headers = {
 }
 
 
-class InstaRequest():
+class InstaRequest:
     def __init__(self) -> None:
         pass
 
@@ -36,7 +36,7 @@ class InstaRequest():
         print("get_user_id response.text: ", response.text)
         print("json load response.text: ", json.loads(response.text))
         print("userid: ", self.userid)
-        return response
+        return self.userid
 
     def get_user_following(self, user_id):
         user_following_url = "https://instagram47.p.rapidapi.com/user_following"
