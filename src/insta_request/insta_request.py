@@ -21,21 +21,24 @@ headers = {
 }
 
 
-class InstaRequest:
-    # def __init__(self):
-    #     pass
+class InstaRequest():
+    def __init__(self) -> None:
+        pass
 
-    def get_user_id(username):
+    def get_user_id(self, username):
         get_user_id_url = "https://instagram47.p.rapidapi.com/get_user_id"
         querystring = {"username": username}
         response = requests.request(
             "GET", get_user_id_url, headers=headers, params=querystring)
-        userid = response.text[0]
+
+        json_response = json.loads(response.text)
+        self.userid = json_response['user_id']
         print("get_user_id response.text: ", response.text)
-        print("userid: ", userid)
+        print("json load response.text: ", json.loads(response.text))
+        print("userid: ", self.userid)
         return response
 
-    def get_user_following(user_id):
+    def get_user_following(self, user_id):
         user_following_url = "https://instagram47.p.rapidapi.com/user_following"
         querystring = {"userid": user_id}
         user_following_response = requests.request("GET", user_following_url,
@@ -43,7 +46,7 @@ class InstaRequest:
         print("user_following_response.text: ", user_following_response.text)
         return user_following_response
 
-    def get_user_followers(user_id):
+    def get_user_followers(self, user_id):
         user_followers_url = "https://instagram47.p.rapidapi.com/user_followers"
         querystring = {"userid": user_id}
         response = requests.request(
@@ -51,7 +54,7 @@ class InstaRequest:
         print("response.text: ", response.text)
         return response
 
-    def parse_followers(follower_list):
+    def parse_followers(self, follower_list):
         """Return list of names & usernames."""
         array = []
         for user in follower_list['body']['edges']:
@@ -64,3 +67,6 @@ class InstaRequest:
         return array
 
     # def execute()
+
+
+# InstaRequest.get_user_id(username='NAME')
